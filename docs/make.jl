@@ -35,8 +35,7 @@ Documenter.makedocs(
             "BAS" => "literate/bas.md",
         ],
         "Reference" => "reference.md"
-    ],
-    strict = true
+    ]
 )
 
 clear_md_files(literate_dir)
