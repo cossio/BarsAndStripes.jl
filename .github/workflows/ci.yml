@@ -17,10 +17,10 @@ jobs:
           - macOS-latest
           - windows-latest
         arch:
-          - x64
+          - default
     steps:
-      - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@v1
+      - uses: actions/checkout@v7
+      - uses: julia-actions/setup-julia@v3
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
