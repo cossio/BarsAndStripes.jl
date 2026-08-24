@@ -7,6 +7,10 @@ on:
     tags: [v*]
   pull_request:
 
+permissions:
+  contents: write # To push docs to the gh-pages branch
+  statuses: write # To report deployment status on the commit
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,5 +24,4 @@ jobs:
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
         run: julia --project=docs/ docs/make.jl
